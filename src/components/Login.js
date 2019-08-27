@@ -22,7 +22,7 @@ class Login extends Component {
                     <div class="form-container sign-in-container">
                         <form action="#">
                             <h1>Sign in</h1>
-                            <span>or use your account</span>
+                            <span>To use your account</span>
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
                             <button>Sign In</button>
@@ -42,6 +42,17 @@ class Login extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="floating-box">
+                    <ul className="box-area">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         )
