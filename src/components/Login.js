@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import './App.css';
 
+
 class Login extends Component {
 
     render() {
         return (
+
             <div className="login-form">
                 <div class="container" id="container">
                     <div class="form-container sign-up-container">
@@ -23,7 +25,6 @@ class Login extends Component {
                             <span>or use your account</span>
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
-                            <a href="/">Forgot your password?</a>
                             <button>Sign In</button>
                         </form>
                     </div>
