@@ -31,7 +31,7 @@ class Login extends Component {
                     <div class="form-container sign-up-container">
                         <form action="#">
                             <h1>Create Account</h1>
-                            <span>or use your email for registration</span>
+                            <span>use your email for registration</span>
                             <input type="text" placeholder="Name" />
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
