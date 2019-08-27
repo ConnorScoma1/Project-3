@@ -16,6 +16,10 @@ body {
 	margin: -20px 0 50px;
 }
 
+/* ============================
+    Floating Box Aniamtions
+============================= */
+
 .box-area {
     position: absolute;
     top: 0;
@@ -33,6 +37,7 @@ body {
     height: 25px;
     background: rgba(255, 255, 255, 0.2);
     animation: animate 20s linear infinite;
+    bottom: -150px;
 }
 
 .box-area li:nth-child(1) {
@@ -58,7 +63,7 @@ body {
 }
 
 .box-area li:nth-child(4) {
-    left: 70%;
+    left: 42%;
     width: 150px;
     height: 150px;
     animation-delay: 0s;
@@ -78,6 +83,21 @@ body {
     height: 110px;
     animation-delay: 3.5s;
 }
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ============================
+   END OF Floating Box Aniamtions
+============================= */
 
 
 h1 {
