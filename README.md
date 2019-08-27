@@ -21,3 +21,5 @@ we will utilize redux/state management, mysql for authentication, react and node
 
 ---
 
+![Image of Yaktocat](github/loginpreview.gif)
+
