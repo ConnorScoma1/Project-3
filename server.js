@@ -16,7 +16,7 @@ mongoose
     .then(() => console.log('MongoDB Connected '))
     .catch(err => console.log(err))
 
-app.use('/api/items', item);
+app.use('/api/items', items);
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
@@ -27,5 +27,6 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 const port = process.env.PORT || 3000;
+
 
 app.listen(port, () => console.log(`Server Listening on port: ${port}`))
