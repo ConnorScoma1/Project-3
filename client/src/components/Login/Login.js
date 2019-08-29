@@ -32,9 +32,9 @@ class Login extends Component {
                         <form action="#">
                             <h1>Create Account</h1>
                             <span>use your email for registration</span>
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email" />
-                            <input type="password" placeholder="Password" />
+                            <input type="text" placeholder="Name (required)" />
+                            <input type="email" placeholder="Email (required)" />
+                            <input type="password" placeholder="Password (required)" />
                             <button>Sign Up</button>
                         </form>
                     </div>
