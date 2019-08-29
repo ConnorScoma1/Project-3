@@ -5,13 +5,14 @@ const Schema = mongoose.Schema;
 // Add More Fields When Front-End is Done
 
 const LoginSchema = new Schema({
-    username: {
+    name: {
         type: String,
         required: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
