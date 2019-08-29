@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // Add More Fields When Front-End is Done
 
-const LoginSchema = new Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -24,4 +24,4 @@ const LoginSchema = new Schema({
     }
 })
 
-module.exports = Login = mongoose.model('login', LoginSchema)
+module.exports = User = mongoose.model('user', UserSchema)
