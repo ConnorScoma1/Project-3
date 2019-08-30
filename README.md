@@ -21,3 +21,15 @@ we will utilize redux/state management, mysql for authentication, react and node
 
 ---
 
+## Set Up
+
+> git clone https://github.com/ConnorScoma1/Project-3.git
+
+> npm run client-install 
+
+> npm install
+
+Start Development Server
+
+ > npm run dev 
+
