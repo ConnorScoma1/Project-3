@@ -2,9 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const config = require('config')
-
-const logging = require('./routes/api/login')
+const config = require('config');
 
 const app = express();
 
@@ -20,7 +18,8 @@ mongoose
     .then(() => console.log('MongoDB Connected '))
     .catch(err => console.log(err))
 
-app.use('/api/login', logging);
+app.use('/api/login', require('./routes/api/login'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
