@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         password
       });
 
-      bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.genSalt(16, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if(err) throw err;
           newUser.password = hash;
@@ -35,7 +35,6 @@ router.post('/', (req, res) => {
               jwt.sign(
                 { id: user.id },
                 config.get('jwtSecret'),
-                { expiresIn: 3600 },
                 (err, token) => {
                   if(err) throw err;
                   res.json({
@@ -49,7 +48,7 @@ router.post('/', (req, res) => {
                 }
               )
 
-              
+
             });
         })
       })
