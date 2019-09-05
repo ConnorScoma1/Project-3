@@ -1,11 +1,9 @@
-import React , { Component } from 'react';
+import React  from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login/index";
 import './App.css';
 
-class App extends Component() {
-
-  render(){
+function App() {
     return (
       <Router>
         <div>
@@ -15,7 +13,7 @@ class App extends Component() {
         </div>
       </Router>
     );
-  }
+  
 }
 
 export default App;
