@@ -16,21 +16,9 @@ import {
 export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: USER_LOADING });
 
-    // Get Token
-    const token = getState().auth.token;
 
-    // Header
-    const config = {
-        headers: {
-            "Content-type": "application/json"
-        }
-    }
 
-    if(token) {
-        config.headers['x-auth-token'] = token;
-    }
-
-    axios.get('/api/auth/user', config)
+    axios.get('/api/auth/user', tokenConfig(getState))
         .then(res => dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -42,3 +30,22 @@ export const loadUser = () => (dispatch, getState) => {
             })
         })
 }       
+
+// Set Config
+
+export const tokenConfig = getState => {
+        // Get Token
+        const token = getState().auth.token;
+
+        // Header
+        const config = {
+            headers: {
+                "Content-type": "application/json"
+            }
+        }
+    
+        if(token) {
+            config.headers['x-auth-token'] = token;
+        }
+    return config
+}
