@@ -28,5 +28,14 @@ export const loadUser = () => (dispatch, getState) => {
         config.headers['x-auth-token'] = token;
     }
 
-    axios.get('/api/auth/user',)
-}   
+    axios.get('/api/auth/user', config)
+        .then(res => dispatch({
+            type: USER_LOADED,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch({
+                type: AUTH_ERROR
+            })
+        })
+}       
