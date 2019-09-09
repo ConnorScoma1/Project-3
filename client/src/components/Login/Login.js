@@ -51,16 +51,24 @@ class Login extends Component {
                             <input 
                                 type="text"
                                 name="name"
+                                id="name"
                                 placeholder="Name (required)"
                                 onChange={this.onChange}
                             />
                             <input
                                 type="email"
                                 name="email"
+                                id="email"
                                 placeholder="Email (required)"
                                 onChange={this.onChange}
                             />
-                            <input type="password" placeholder="Password (required)" />
+                            <input 
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Password (required)"
+                                onChange={this.onChange}
+                            />
                             <button>Sign Up</button>
                         </form>
                     </div>
