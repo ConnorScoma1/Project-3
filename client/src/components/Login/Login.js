@@ -1,8 +1,24 @@
 import React, { Component } from "react";
 import './App.css';
-
+import PropTypes from 'prop-types';
 
 class Login extends Component {
+    state = {
+        name: '',
+        email: '',
+        password: '',
+        msg: null
+    }
+
+    static propTypes = {
+        isAuthenticated: PropTypes.bool,
+        error: PropTypes.object.isRequired 
+    }
+
+    onChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this)
@@ -32,8 +48,18 @@ class Login extends Component {
                         <form action="#">
                             <h1>Create Account</h1>
                             <span>use your email for registration</span>
-                            <input type="text" placeholder="Name (required)" />
-                            <input type="email" placeholder="Email (required)" />
+                            <input 
+                                type="text"
+                                name="name"
+                                placeholder="Name (required)"
+                                onChange={this.onChange}
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email (required)"
+                                onChange={this.onChange}
+                            />
                             <input type="password" placeholder="Password (required)" />
                             <button>Sign Up</button>
                         </form>
@@ -77,5 +103,10 @@ class Login extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated,
+    error: state.error
+})
 
 export default Login;
