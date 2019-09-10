@@ -12,7 +12,8 @@ class Login extends Component {
 
     static propTypes = {
         isAuthenticated: PropTypes.bool,
-        error: PropTypes.object.isRequired 
+        error: PropTypes.object.isRequired,
+        register: PropTypes.func.isRequired
     }
 
     onChange = e => {
@@ -42,6 +43,7 @@ class Login extends Component {
     render() {
         return (
 
+        <div className="login-page-background">
             <div className="login-form">
                 <div class="container" id="container">
                     <div class="form-container sign-up-container">
@@ -78,6 +80,11 @@ class Login extends Component {
                             <span>To use your account</span>
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
+                                {/* Testing */}
+                                <a href="/protected">
+                                    Click Me
+                                </a>
+                                
                             <button>Sign In</button>
                         </form>
                     </div>
@@ -108,13 +115,10 @@ class Login extends Component {
                     </ul>
                 </div>
             </div>
+        </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated,
-    error: state.error
-})
 
 export default Login;
