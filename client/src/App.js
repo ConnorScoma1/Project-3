@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login/index";
 import Protected from "./components/Login/component/app.js"
-import Landing from "./components/Landing/index"
+import Landing from "./components/landing/index"
 
 
 import './App.css';
