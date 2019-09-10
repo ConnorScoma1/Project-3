@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login/index";
 import Protected from "./components/Login/component/app.js"
+import Landing from "./components/Landing/index"
 
 
 import './App.css';
@@ -14,8 +15,9 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/protected" component={Protected} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/protected" component={Protected} />
           </Switch>
         </div>
       </Router>
