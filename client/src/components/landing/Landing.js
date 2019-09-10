@@ -5,10 +5,8 @@ class Landing extends Component {
     render() {
         return (
             <div className="landing-form">
-                <h1 className="landing-title">Project 3
-                    <span className="landing-sub"> Inventory Management System</span>
-                </h1>
-
+                <h1 className="landing-title">Project 3</h1>
+                <p>Inventory Management System</p>
                 <p>We will make an inventory app for small businesses</p>
                 <p>new messages we will utilize redux/state management, mysql for authentication, react and node as well express</p>
                 <p>Click here to <a href="/login">Login</a> or <a href="/login">Sign Up</a></p>
