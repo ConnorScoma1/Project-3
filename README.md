@@ -21,15 +21,28 @@ we will utilize redux/state management, mysql for authentication, react and node
 
 ---
 
+# Get Started
+
+Join The Project Page
+
+> https://github.com/users/ConnorScoma1/projects/3
+
 ## Set Up
 
-> git clone https://github.com/ConnorScoma1/Project-3.git
+> ``` git clone https://github.com/ConnorScoma1/Project-3.git ```
 
-> npm run client-install 
+> ``` cd ``` into  ``` client ``` folder ``` npm install ``` for client dependantcies
 
-> npm install
+> ``` cd .. ``` and rund ``` npm install ``` to install server dependantcies
 
-Start Development Server
+> ``` npm run dev ``` to run both Client and Server 
 
- > npm run dev 
+or 
+
+> ``` node server ``` for Server ONLY Envoirnment
+
+> ``` npm run client ``` for Client Only Envoirnment
+
+---
+
 

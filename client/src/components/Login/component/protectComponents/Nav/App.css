@@ -1,0 +1,32 @@
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    background: linear-gradient(to top, #8942a8, #ba382f);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 10px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    transition: .3s ease;
+}
+
+li a:active {
+    background: white;
+    color: black;
+}
+
+li a:hover {
+    background: white;
+    color: black;
+    transition: .3s ease;
+}

@@ -5,9 +5,6 @@ import {
     USER_LOADED,
     USER_LOADING,
     AUTH_ERROR,
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
-    LOGOUT_SUCCESS,
     REGISTER_SUCCESS,
     REGISTER_FAIL
 } from './types';
@@ -30,6 +27,29 @@ export const loadUser = () => (dispatch, getState) => {
             })
         })
 }       
+
+// Register 
+export const register = ({name, email, password}) => dispatch => {
+    const config = {
+        // Headers
+        header: {
+            'Content-Type': 'application/json'
+        }
+    }
+    // Request Body
+    const body = JSON.stringify({ name, email, password })
+
+    axios.post('/api/users', body, config)
+        .then(res => dispatch({
+            type: REGISTER_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch({
+                type: REGISTER_FAIL
+            })
+        })
+}
 
 // Set Config
 

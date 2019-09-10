@@ -3,9 +3,10 @@
 
 * {
 	box-sizing: border-box;
+	margin: 0;
 }
 
-body {
+.login-page-background {
 	background: linear-gradient(to left, #8942a8, #ba382f);
 	display: flex;
 	justify-content: center;
@@ -13,7 +14,8 @@ body {
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -20px 0 50px;
+	width: 100vw;
+	margin-top: 0;
 }
 
 /* ============================
