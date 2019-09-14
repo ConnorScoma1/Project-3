@@ -20,6 +20,7 @@ mongoose
 
 app.use('/api/user', require('./routes/api/user'));
 app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/inventory', require("./routes/api/inventory"))
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
@@ -27,6 +28,7 @@ if(process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
+
 }
 
 const port = process.env.PORT || 5000;

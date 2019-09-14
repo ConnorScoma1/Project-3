@@ -6,7 +6,10 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../../models/Login');
 
+//grab user information 
+router.get("/", (req, res) => {
 
+});
 router.post('/', (req, res) => {
   const { name, email, password } = req.body;
 

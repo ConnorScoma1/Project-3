@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import './App.css';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+
 
 class Login extends Component {
     state = {
@@ -25,20 +27,10 @@ class Login extends Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(){
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
-
-        signUpButton.addEventListener('click', () => {
-	        container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-	        container.classList.remove("right-panel-active");
-        });
+    handleClick = event => {
+        event.preventDefault(); 
+        console.log(event.target.name);
     }
-
 
     render() {
         return (
@@ -71,12 +63,12 @@ class Login extends Component {
                                 placeholder="Password (required)"
                                 onChange={this.onChange}
                             />
-                            <button>Sign Up</button>
+                            <button name="signUp" onClick={this.handleClick}>Sign Up</button>
                         </form>
                     </div>
                     <div class="form-container sign-in-container">
                         <form action="#">
-                            <h1>Sign in</h1>
+                             <h1>Sign in</h1>
                             <span>To use your account</span>
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
@@ -85,7 +77,7 @@ class Login extends Component {
                                     Click Me
                                 </a>
                                 
-                            <button>Sign In</button>
+                                <button name="signIn" onClick={this.handleClick}>Sign In</button>
                         </form>
                     </div>
                     <div class="overlay-container">
@@ -93,12 +85,15 @@ class Login extends Component {
                             <div class="overlay-panel overlay-left">
                                 <h1>Welcome Back!</h1>
                                 <p>To keep connected with us please login with your personal info</p>
-                                <button class="ghost" id="signIn" onClick={this.handleClick}>Sign In</button>
+                                <button class="ghost" id="signIn" name="signIn" onClick={this.handleClick}>Sign In</button>
                             </div>
                             <div class="overlay-panel overlay-right">
                                 <h1>Hello, Friend!</h1>
                                 <p>Enter your personal details and start journey with us</p>
-                                <button class="ghost" id="signUp" onClick={this.handleClick}>Sign Up</button>
+                                    {/* <button class="ghost" id="signUp" name="signUp" onClick={this.handleClick}>Test</button> */}
+                                    <Link to="/signup">
+                                        <button className="ghost" id="signUp" name="signUp">Sign Up</button>
+                                    </Link>
                             </div>
                         </div>
                     </div>
