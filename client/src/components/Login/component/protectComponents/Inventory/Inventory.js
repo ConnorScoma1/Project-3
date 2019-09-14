@@ -1,17 +1,16 @@
-  
 import React, { Component } from "react";
 import './App.css'
 
-class Dashboard extends Component {
+class Inventory extends Component {
 
     render() {
         return (
             <div className="nav-background">
-                <div className="title">Dashboard</div>
+                <div className="title">Inventory</div>
             </div>
         )
     }
 }
 
 
-export default Dashboard;
+export default Inventory;
