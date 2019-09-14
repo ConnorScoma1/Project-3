@@ -3,6 +3,9 @@ import "./app.css"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Dashboard from "./protectComponents/Dashbaord/Dashboard";
 import Inventory from "./protectComponents/Inventory";
+import Manage from "./protectComponents/Manage";
+import Account from "./protectComponents/Account";
+import Support from "./protectComponents/Support";
 
 
 class Protected extends Component {
@@ -32,17 +35,15 @@ class Protected extends Component {
                 {/* <a href="/Support">Support</a> */}
                 <Link to={'/protected/support'} className="nav-links"> Support </Link>
               </li>
-              <li>
-                {/* <a href="/Contact">Contact</a> */}
-                <Link to={'/protected/contact'} className="nav-links"> Contact </Link>
-              </li>
             </ul>
           </div>
 
           <Switch>
             <Route exact path="/protected" component={Dashboard}/>
             <Route path="/protected/inventory" component={Inventory}/>
-            <Route path="/protected/manage" component={Inventory}/>
+            <Route path="/protected/manage" component={Manage}/>
+            <Route path="/protected/account" component={Account} />
+            <Route path="/protected/support'" component={Support} />
           </Switch>
         </div>
       </Router>
