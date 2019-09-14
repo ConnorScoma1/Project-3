@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./protectComponents/Nav"
+import Dashboard from "./protectComponents/Dashbaord";
+
 
 
 class Protected extends Component {
@@ -8,9 +10,10 @@ class Protected extends Component {
     return (
       <Router>
         <div>
-          <Switch>
+          
             <Route path="/protected" component={Nav} />
-          </Switch>
+            <Route path="/protected" component={Dashboard} />
+          
         </div>
       </Router>
     );
