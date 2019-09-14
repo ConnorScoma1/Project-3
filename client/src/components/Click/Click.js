@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import signUP from "signUP";
+// import signUP from "signUP";
 
 class Click extends Component {
+
+    sayHello = () => console.log("test"); 
 
     render() {
         console.log("Testing");
 
-        function button() { this.yourfunc(signUp) }
 
         return (
             <div>
-                <button onClick={button}></button>
+                <button onClick={this.sayHello}></button>
                 <h1>Nothing</h1> 
             </div>
 
