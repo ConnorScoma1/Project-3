@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-
 // import signUP from "signUP";
 
-class Click extends Component {
+class Inventory extends Component {
 
-    sayHello = () => console.log("hello"); 
+    sayHello = () => console.log("test"); 
 
     render() {
         console.log("Testing");
 
         return (
             <div>
-                <button onClick={this.sayHello} a href="/welcome"></button>
+                <h2>Inventory</h2>
             </div>
 
            
@@ -20,5 +19,5 @@ class Click extends Component {
     }
 }
 
-export default Click;
+export default Inventory;
      

@@ -1,16 +1,20 @@
-import React, { Component } from "react";
-import "./App.css";
+// Home.js
 
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-class Welcome extends React.Component {
-    render() {
+class Welcome extends Component {
+  render() {
+    return (
+        <div>
+        <h2>Welcome</h2>
+        <Link to="/inventory">Inventory</Link>
+       
         
-            if (user) {
-              return <h1>Hello, {formatName(user)}!</h1>;
-            }
-            return <h1>Hello, Stranger.</h1>;
-          }
-    }
+        
+        </div>
+    );
+  }
+}
 
-  
 export default Welcome;

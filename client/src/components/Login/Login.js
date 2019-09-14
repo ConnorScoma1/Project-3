@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 import PropTypes from 'prop-types';
 
+
 class Login extends Component {
     state = {
         name: '',
@@ -66,7 +67,7 @@ class Login extends Component {
                     </div>
                     <div class="form-container sign-in-container">
                         <form action="#">
-                            <h1>Sign in</h1>
+                             <h1>Sign in</h1>
                             <span>To use your account</span>
                             <input type="email" placeholder="Email" />
                             <input type="password" placeholder="Password" />
