@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 
 class Login extends Component {
@@ -89,7 +90,10 @@ class Login extends Component {
                             <div class="overlay-panel overlay-right">
                                 <h1>Hello, Friend!</h1>
                                 <p>Enter your personal details and start journey with us</p>
-                                <button class="ghost" id="signUp" name="signUp" onClick={this.handleClick}>Sign Up</button>
+                                    {/* <button class="ghost" id="signUp" name="signUp" onClick={this.handleClick}>Test</button> */}
+                                    <Link to="/signup">
+                                        <button className="ghost" id="signUp" name="signUp">Sign Up</button>
+                                    </Link>
                             </div>
                         </div>
                     </div>

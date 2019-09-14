@@ -18,9 +18,9 @@ const InventorySchema = new Schema({
         required: true
     },
     quantity: {
-        type: INTEGER,
-        default: Date.now
+        type: Number,
+        default: 0
     }
 })
 
-module.exports = Inventory = mongoose.model('products', InventorySchema);
+module.exports = Inventory = mongoose.model('inventory', InventorySchema);
