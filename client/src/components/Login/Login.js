@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
-import { register } from '../../actions/authActions';
+import { register, login } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 
 class Login extends Component {
@@ -169,4 +169,18 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+// export default connect(
+//     mapStateToProps,
+//     {login, register}
+// )(Login)
+
+export default connect(
+    mapStateToProps,
+    { login, register }
+)(Login)
+
+// export default Login;
