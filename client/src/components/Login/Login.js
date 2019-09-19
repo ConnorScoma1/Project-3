@@ -3,9 +3,11 @@ import './App.css';
 import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
 import { register } from '../../actions/authActions';
+import { clearErrors } from '../../actions/errorActions';
 
 class Login extends Component {
 
+    // For Reg and Login
     state = {
         name: '',
         email: '',
@@ -17,7 +19,15 @@ class Login extends Component {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         register: PropTypes.func.isRequired,
-        // clearErrors: PropTypes.func.isRequired
+        clearErrors: PropTypes.func.isRequired
+    }
+
+    componentDidMount(prevProps){
+        const { isAuthenticated } = this.props;
+
+        if(isAuthenticated) {
+            console.log('Changing Route to /protected')
+        }
     }
 
     handleClick(){
@@ -33,21 +43,6 @@ class Login extends Component {
 	        container.classList.remove("right-panel-active");	
         });	
     }
-
-    // componentDidMount(prevProps) {
-    //     const { error, isAuthenticated } = this.props;
-    //     if(error !== prevProps.error) {
-    //         if(error.id === 'REGISTER_FAIL'){
-    //             this.setState({ msg: error.msg.msg })
-    //         } else {
-    //             this.setState({ msg: null })
-    //         }
-    //     }
-
-    //     if(isAuthenticated){
-    //         console.log('user is authenticated')
-    //     }
-    // }
 
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
@@ -68,9 +63,17 @@ class Login extends Component {
         this.props.register(newUser);
     }
 
-    constructor(props){
-        super(props);
-        this.handleClick = this.handleClick.bind(this)
+    onSubmitLogin = e => {
+        e.preventDefault();
+
+        const { email, password } = this.state;
+
+        const user = {
+            email,
+            password
+        }
+
+        this.props.login(user)
     }
 
     render() {
@@ -80,7 +83,7 @@ class Login extends Component {
             <div className="login-form">
                 <div class="container" id="container">
                     <div class="form-container sign-up-container">
-                        <form action="#">
+                        <form onSubmit={this.onSumbit}>
                             <h1>Create Account</h1>
                             <span>use your email for registration</span>
                             <input 
@@ -108,7 +111,7 @@ class Login extends Component {
                         </form>
                     </div>
                     <div class="form-container sign-in-container">
-                        <form action="#">
+                        <form onSubmit={this.onSubmitLogin}>
                              <h1>Sign in</h1>
                             <span>To use your account</span>
                             <input 
@@ -165,15 +168,5 @@ class Login extends Component {
         )
     }
 }
-
-// const mapStateToProps = state => ({
-//     isAuthenticated: state.auth.isAuthenticated,
-//     error: state.error
-// })
-
-// export default connect(
-//     mapStateToProps,
-//     { register }
-// )(Login);
 
 export default Login;
