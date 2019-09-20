@@ -4,7 +4,7 @@ import Login from "./components/Login/index";
 import Protected from "./components/Login/component/app.js";
 import Landing from "./components/landing/index";
 import "./App.css";
-import NotFound from "./components/NotFound/index";
+
 // import NotFound from './NotFound.jsx/index';
 
 // User Auth
