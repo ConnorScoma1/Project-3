@@ -22,13 +22,23 @@ class Login extends Component {
         clearErrors: PropTypes.func.isRequired
     }
 
-    componentDidMount(prevProps){
-        const { isAuthenticated } = this.props;
-
-        if(isAuthenticated) {
-            console.log('Changing Route to /protected')
-        }
+    
+  componentDidUpdate(prevProps) {
+    const { error, isAuthenticated } = this.props;
+    if (error !== prevProps.error) {
+      // Check for register error
+      if (error.id === 'REGISTER_FAIL') {
+        this.setState({ msg: error.msg.msg });
+      } else {
+        this.setState({ msg: null });
+      }
     }
+
+    if ( isAuthenticated ) {
+        console.log('User Authenticated')
+    }
+
+}
 
     handleClick(){
         const signUpButton = document.getElementById('signUp');	     
@@ -173,14 +183,7 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 })
 
-// export default connect(
-//     mapStateToProps,
-//     {login, register}
-// )(Login)
-
 export default connect(
     mapStateToProps,
     { login, register }
 )(Login)
-
-// export default Login;
