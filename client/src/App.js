@@ -30,7 +30,6 @@ class App extends Component {
           {/* Protected Route for user */}
           <Route path="/protected" component={Protected} />
 
-          <Route path="*" component={NotFound} />
         </Router>
       </Provider>
     );
