@@ -50,9 +50,10 @@ updateInventory = async (req, res) => {
         message: 'Inventory not found!',
       });
     };
-    inventory.name = body.name
-    inventory.time = body.time
-    inventory.rating = body.rating
+    inventory.productName = body.productName
+    inventory.productType = body.productType
+    inventory.description = body.description
+    inventory.quantity = body.quantity
       
     inventory
       .save()

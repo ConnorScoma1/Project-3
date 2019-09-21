@@ -5,7 +5,7 @@ const Inventory = new Schema(
   {
     productName: { type: String, required: true },
     productType: { type: String, required: true, unique: true },
-    description: { type: Number, required: true },
+    description: { type: String, required: true },
     quantity: { type: Number, default: 0 },
  
   });

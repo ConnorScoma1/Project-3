@@ -3,7 +3,7 @@ import './App.css';
 import PropTypes from 'prop-types';
 import { connect }from 'react-redux';
 import { register, login } from '../../actions/authActions';
-import { clearErrors } from '../../actions/errorActions';
+// import { clearErrors } from '../../actions/errorActions';
 
 class Login extends Component {
 

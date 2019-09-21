@@ -19,7 +19,7 @@ class Landing extends Component {
           </p>
           <p>
               <span className="btn-animation github">
-            <a href="https://github.com/ConnorScoma1/Project-3" target="_blank">
+            <a href="https://github.com/ConnorScoma1/Project-3" rel="noopener nonreferrer">
               GitHub
             </a>
             </span>
