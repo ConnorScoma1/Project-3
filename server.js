@@ -1,15 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const config = require('config');
+const cors = require('cors'); 
 
+const db = require('./db'); 
 const app = express();
 
+
+app.use(bodyParser.urlencoded({})); 
 app.use(bodyParser.json());
+app.use(cors()); 
 
-const db = config.get('mongoURI');
-
+const inventoryRouter = require('./routes/api/inventory-router')
 mongoose
     .connect(db, {
         useNewUrlParser: true,
@@ -20,7 +22,9 @@ mongoose
 
 app.use('/api/user', require('./routes/api/user'));
 app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/inventory', require("./routes/api/inventory"))
+app.use('/api', inventoryRouter);
+
+db.on('error', console.error.bind(console, "MongoDB connection error:");)
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

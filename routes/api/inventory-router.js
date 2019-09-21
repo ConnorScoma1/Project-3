@@ -1,6 +1,6 @@
 const express = require('express')
 
-const InventoryCtrl = require('../../client/controllers/inventoryController');
+const InventoryCtrl = require('../../client/controllers/inventory-ctrl');
 
 const router = express.Router();
 
