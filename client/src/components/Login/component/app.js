@@ -5,7 +5,7 @@ import Dashboard from "./protectComponents/Dashbaord/Dashboard";
 import Inventory from "./protectComponents/Inventory";
 import Manage from "./protectComponents/Manage";
 import Account from "./protectComponents/Account";
-import Support from "./protectComponents/Support";
+import Support from "./protectComponents/Support"
 
 
 class Protected extends Component {
@@ -29,11 +29,11 @@ class Protected extends Component {
               </li>
               <li>
                 {/* <a href="/Account">Account</a> */}
-                <Link to={'/protected/account'} className="nav-links"> Account </Link>
+                <Link to={'/protected/account'} className="nav-links"> Support</Link>
               </li>
               <li>
                 {/* <a href="/Support">Support</a> */}
-                <Link to={'/protected/support'} className="nav-links"> Support </Link>
+                {/* <Link to={'/protected/support'} className="nav-links"> Support </Link> */}
               </li>
             </ul>
           </div>
