@@ -1,15 +1,13 @@
-const router = require("express").Router();
-const inventoryController = require("../../client/controllers/inventoryController"); 
-// Matches with "/api/inventory"
-router.route("/")
-  .get(inventoryController.findAll)
-  .post(inventoryController.create);
+const express = require('express')
 
-// Matches with "/api/inventory/:id"
-router
-  .route("/:id")
-  .get(inventoryController.findById)
-  .put(inventoryController.update)
-  .delete(inventoryController.remove);
+const InventoryCtrl = require('../../client/controllers/inventoryController');
 
-module.exports = router;
+const router = express.Router();
+
+router.post('/inventory', InventoryCtrl.createInventory);
+router.put('/inventory/:id', InventoryCtrl.updateInventory);
+router.delete('/inventory/:id', InventoryCtrl.deleteInventory);
+router.get('/inventory/:id', InventoryCtrl.getInventoryById);
+router.get('/inventory', InventoryCtrl.getInventory);
+
+module.exports = router; 
