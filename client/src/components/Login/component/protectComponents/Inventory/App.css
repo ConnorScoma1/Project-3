@@ -1,4 +1,23 @@
-.title {
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+
+/* .title {
     font-size: 100px;
     color: black;
+};
+
+.form-group {
+    align-content: center;
+    font-size: 30px;
+    box-sizing:  300;
+    margin: 0;
+    max-width: 550px; */
+
+/* }  */
+.table {
+    width: 75%;
+    background-color: brown;
+    position: relative;
+    left: 200px;
 }
