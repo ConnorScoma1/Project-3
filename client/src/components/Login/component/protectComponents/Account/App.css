@@ -2,3 +2,12 @@
     font-size: 100px;
     color: black;
 }
+
+.form-group {
+    width: 75%;
+    background-color: brown;
+    position: relative;
+    left: 200px;
+    right: 200px;
+    align-content: center;
+}

@@ -1,1 +1,1 @@
-export { default } from './Support.js'
+export { default } from './Support'
